@@ -1,43 +1,64 @@
-let user={
-name:"Aqil",
-age:20
-
-
-
-}
-
-
-delete user["namee"]
-// for (let keybord in user) {
-//   alert(keybord);
-//   alert(user[keybord])
-    
-// }
-let person={
-salary:100
-
-}
-Object.assign(user,person);
-
-let person2 =Object.assign({},user)
-  console.log(person2.name);
-  let menu = {
-    en: 200,
-    boy: 300,
-    baslik: "Menü"
-  };
-  
-
-
-  function ikivur(obj){
-  for (let key in obj) {
-    if (typeof obj[key]=="number")
-     {
-
-     obj[key]=    obj[key]*2
+ 
+  class Matchs{
    
-    }
-    
-  }console.log(obj);}
+    constructor(number)
+ {   
+    this.number=number;
   
-ikivur(menu)
+ 
+ }
+plus(num){
+ this.number=this. number+num;
+ return this
+}
+ minus(num){
+ this.number=this. number-num;
+ return  this
+}
+multiple(num){
+  this.number=  this. number*num;
+  return this
+}
+divide(num){
+   this.number=this. number/num;
+   return this
+} }
+var result = new Matchs(50).plus(6).minus(30).multiple(3).divide(2)
+
+
+console.log(result.number);
+//2
+
+
+class Array {
+  constructor(arr){
+this.arr=arr
+
+  }
+  finds(value){
+for (let index = 0; index < this.arr.length; index++) {
+    const element = this.arr[index];
+    
+    if (value==element) {
+    return value;
+    }
+  
+   
+} 
+
+  }
+  push1(value){
+
+    this.arr[this.arr.length++]=value;
+     return this.arr
+}
+
+
+}
+
+
+let arr1=[1,2]
+let newarr=new Array(arr1).push1(8)
+let newarrs=new Array(arr1).finds(2)
+console.log(newarrs);
+console.log(newarr);
